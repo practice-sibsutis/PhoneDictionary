@@ -4,10 +4,16 @@ using PhoneDictionary;
 
 IndexArray arr = new IndexArray(new PhoneRecord[]
 {
-    new PhoneRecord("Anton", "Mileshko", "12345667"),
-    new PhoneRecord("Petr", "Petrov", "12345667"),
-    new PhoneRecord("Maria", "Kim", "12345667"),
-    new PhoneRecord("Alex", "Smolyar", "12345667")
+    new PhoneRecord("Zhou", "Guanyu", "12345667"),
+    new PhoneRecord("Valtteri", "Bottas", "12345667"),
+    new PhoneRecord("Pierre", "Gasly", "12345667"),
+    new PhoneRecord("Yuki", "Tsunoda", "12345667"),
+    new PhoneRecord("Fernando", "Alonso", "12345667"),
+    new PhoneRecord("Esteban", "Ocon", "12345667"),
+    new PhoneRecord("Nico", "Hülkenberg", "12345667"),
+    new PhoneRecord("Charles", "Leclerc", "12345667"),
+    new PhoneRecord("Carlos", "Sainz", "12345667"),
+    new PhoneRecord("Lewis", "Hamilton", "12345667"),
 });
 
 for (int i = 0; i < arr.Length; i++)
@@ -17,18 +23,19 @@ for (int i = 0; i < arr.Length; i++)
 
 Console.WriteLine();
 
-arr.Sort();
+arr.Sort(new PhoneRecordComparerByFirstName());
 
 for (int i = 0; i < arr.Length; i++)
 {
     Console.WriteLine(arr[i].ToString());
 }
 
-Person p1 = new Person("A", "B");
-Person p2 = p1;
+Console.WriteLine();
 
-Console.WriteLine($"{p1} {p2}");
+arr.Sort(new PhoneRecordComparerBySecondName());
 
-p1.Name = "C";
+for (int i = 0; i < arr.Length; i++)
+{
+    Console.WriteLine(arr[i].ToString());
+}
 
-Console.WriteLine($"{p1} {p2}");
